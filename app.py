@@ -1,8 +1,8 @@
-# Author Chathuranga Lakshan
-# Date 2024-10-05
-# Description This script simulates the Least Recently Used (LRU) page replacement algorithm.
-# It processes a sequence of page requests and manages a fixed number of memory frames,
-# tracking hits, page faults, and hit ratio, while providing step-by-step output.
+# Author: - Chathuranga Lakshan
+# Date: - 2024-10-05
+# Description: - This script simulates the Least Recently Used (LRU) page replacement algorithm.
+#              - It processes a sequence of page requests and manages a fixed number of memory frames,
+#                tracking hits, page faults, and hit ratio, while providing step-by-step output.
 # Assumptions: - The main memory has 3 memory frames (can be changed in the code). 
 #              - There are no any modified bits/dirty bits.
 #              - The page order and number of main memory frames are hardcoded but can be modified.
@@ -34,11 +34,11 @@ def lru_algorithm(page_order, num_frames):
                                                 # Hits(N1), Page Faults(N2) => Hit Ratio = N1/(N1+N2)
 
         print(f"Processing page: {page}")
-        sleep(1)
-        print(f"Memory: {memory } Hits: {hits}, Page Faults: {page_faults}, Hit Ratio: {hit_ratio:.2f}")
+        print(f"Memory: {memory }")
+        print(f"Hits: {hits}, Page Faults: {page_faults}, Hit Ratio: {hit_ratio:.2f}")
         print()
-        sleep(1)
 
+    print("***FInal Result***")
     result_tb(hits, page_faults, hit_ratio)
 
 # Final result table function  
@@ -48,14 +48,32 @@ def result_tb(hits, page_faults, hit_ratio):
     result_tb.add_row([hits, page_faults, f"{hit_ratio:.2f}"])
     print(result_tb)
 
+# Page reference order function
+def page_input(page_order):
+    print("Please enter your page reference. Maximum 10 reference must provide")
+    for i in range(10):
+        element = input(f"Enter page {i+1}: ")
+        page_order.append(element)
 
-page_order = [2, 3, 2, 1, 5, 2, 4, 5, 3, 2, 5, 2] # Page request order. Hardcoded but can be modified.
-num_frames = 3 # Number of frames in main memory. Hardcoded but can be modified.
+# Execution
+page_order = [] # Page reference order list
 
-print("=" * 60)
+print("=" * 70)
 print("Page Replacement Simulation - Least Recently Used (LRU) Algorithm")
-print("=" * 60)
+print("=" * 70)
 
-print(f"Page Order: {page_order}")
-print(f"Number of Frames in Main Memory: {num_frames}\n")
+page_input(page_order)
+page_order = list(map(int, page_order)) # page_order is a string list. Converting it to an integer list
+print()
+
+num_frames = input("Enter the number of frames (must be a value 3-5): ")
+num_frames = int(num_frames) # num_frames is a string input. Converting it to an integer value
+
+print("-" * 60)
+print(f"Your page reference: {page_order} ")
+print(f"Number of frames : {num_frames} ")
+print(f"Starting simulation...")
+sleep(1)
+print("-" * 60)
+
 lru_algorithm(page_order, num_frames)
