@@ -3,7 +3,7 @@
 # Description This script simulates the Least Recently Used (LRU) page replacement algorithm.
 # It processes a sequence of page requests and manages a fixed number of memory frames,
 # tracking hits, page faults, and hit ratio, while providing step-by-step output.
-# Assumptions: - The main memory has **3 memory frames** (can be changed in the code). 
+# Assumptions: - The main memory has 3 memory frames (can be changed in the code). 
 #              - There are no any modified bits/dirty bits.
 #              - The page order and number of main memory frames are hardcoded but can be modified.
 
