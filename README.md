@@ -6,6 +6,7 @@ It was created as a mini project for the EEX5563 subject.
 ## Features
 
 - Simulates the LRU page replacement algorithm step by step
+- Accept user inputs for page replacement string and number of pages
 - Displays memory state, hits, page faults, and hit ratio after each page request
 - Shows results in a formatted table
 
@@ -13,7 +14,7 @@ It was created as a mini project for the EEX5563 subject.
 
 - The main memory has **3 memory frames** (can be changed in the code)
 - There are no any modified bits/dirty bits
-- The page order and number of main memory frames are hardcoded but can be modified
+- This simulation process limited to 10 pages and number of frames from 3-5, not much as a real environment
 
 ## Requirements
 
